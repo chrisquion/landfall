@@ -1,12 +1,12 @@
 :root {
-    --page-header-bgColor: #242e42;
-    --page-header-bgColor-hover: #1d2636;
-    --page-header-txtColor: #dde9f8;
-    --page-header-headingColor: #7889a4;
-    --page-header-width: 220px;
-    --page-content-bgColor: #f0f1f6;
-    --page-content-txtColor: #171616;
-    --page-content-blockColor: #fff;
+    --folding-header-bgColor: #242e42;
+    --folding-header-bgColor-hover: #1d2636;
+    --folding-header-txtColor: #dde9f8;
+    --folding-header-headingColor: #7889a4;
+    --folding-header-width: 220px;
+    --folding-content-bgColor: #f0f1f6;
+    --folding-content-txtColor: #171616;
+    --folding-content-blockColor: #fff;
     --white: #fff;
     --black: #333;
     --blue: #00b9eb;
@@ -56,6 +56,7 @@ input {
     -webkit-appearance: none;
 }
 
+/*==== folding header ====*/
 .folding-header {
     position: fixed;
     top: 0;
@@ -64,6 +65,9 @@ input {
     bottom: 0;
     overflow: auto;
     padding-top: 20px;
+    width: var(--folding-header-width);
+    color: var(--folding-header-txtColor);
+    background: var(--folding-header-bgColor);
 }
 
 .folding-header nav {
@@ -82,7 +86,7 @@ input {
     display: none;
     margin-left: 5px;
     padding: 4px;
-    background: var(--page-content-blockColor);
+    background: var(--folding-content-blockColor);
     border-radius: var(--border-radius);
 }
 
@@ -98,7 +102,7 @@ input {
     margin-top: 35px;
 }
 
-.page-header .employee-menu li:last-child {
+.folding-header .employee-menu li:last-child {
     margin-top: auto;
     margin-bottom: 20px;
   }
@@ -108,7 +112,15 @@ input {
     letter-spacing: 0.15em;
     font-size: 12px;
     margin-top: 12px;
-    color: var(--page-header-headingColor);
+    color: var(--folding-header-headingColor);
+}
+
+.folding-header .employee-menu svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--folding-header-txtColor);
+    margin-right: 10px;
+    transition: fill 0.2s;
 }
 
 .folding-header .employee-menu a,
@@ -119,16 +131,46 @@ input {
   transition: background 0.2s, color 0.2s;
 }
 
-.page-content {
-
+.folding-header .employee-menu a:hover,
+.folding-header .employee-menu a:focus,
+.folding-header .employee-menu button:hover,
+.folding-header .employee-menu button:focus {
+  background: var(--folding-header-bgColor-hover);
+  color: var(--blue);
+  outline: none;
 }
 
+.folding-header .employee-menu a:hover svg,
+.folding-header .employee-menu a:focus svg,
+.folding-header .employee-menu button:hover svg,
+.folding-header .employee-menu button:focus svg {
+  fill: var(--blue);
+}
+
+.folding-header .employee-menu li > * {
+    width: 100%;
+    padding: 12px 15px;
+}
+
+/*==== folding content ====*/
+.page-content {
+    position: relative;
+    left: var(--folding-header-width);
+    width: calc(100% - var(--folding-header-width));
+    min-height: 100vh;
+    padding: 30px;
+    color: var(--folding-content-txtColor);
+    background: var(--folding-content-bgColor);
+}
+
+
+/*==== search bar ====*/
 .search {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-column-gap: 50px;
     align-items: center;
-    background: var(--page-content-bgColor);
+    background: var(--folding-content-bgColor);
     margin-bottom: 30px;
 }
 
@@ -141,13 +183,56 @@ input {
     height: 50px;
     font-size: 1.5rem;
     padding-left: 15px;
-    background: var(--page-content-blockColor);
+    background: var(--folding-content-blockColor);
     color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
 
-
 .search ::placeholder {
-    color: var(--page-content-txtColor);
+    color: var(--folding-content-txtColor);
+}
+
+.search form svg {
+    width: 26px;
+    height: 26px;
+    fill: var(--page-content-txtColor);
+}
+
+
+.search form button {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+  
+@media screen and (min-width: 768px) {
+    .collapsed .folding-header {
+      width: 40px;
+    }
+   
+    .collapsed .folding-header .admin-menu li > * {
+      padding: 10px;
+    }
+   
+    .collapsed .folding-header .logo,
+    .collapsed .folding-header .admin-menu span,
+    .collapsed .folding-header .admin-menu .menu-heading {
+      display: none;
+    }
+   
+    .collapsed .folding-header .admin-menu svg {
+      margin-right: 0;
+    }
+   
+    .collapsed .folding-header .collapse-btn svg {
+      transform: rotate(180deg);
+    }
+   
+    .collapsed .page-content {
+      left: 40px;
+      width: calc(100% - 40px);
+    }
 }
