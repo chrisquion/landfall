@@ -1,0 +1,116 @@
+:root {
+    --page-header-bgColor: #242e42;
+    --page-header-bgColor-hover: #1d2636;
+    --page-header-txtColor: #dde9f8;
+    --page-header-headingColor: #7889a4;
+    --page-header-width: 220px;
+    --page-content-bgColor: #f0f1f6;
+    --page-content-txtColor: #171616;
+    --page-content-blockColor: #fff;
+    --white: #fff;
+    --black: #333;
+    --blue: #00b9eb;
+    --red: #ec1848;
+    --border-radius: 4px;
+    --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+svg {
+    display: block;
+}
+
+a, 
+button {
+    color: inherit;
+}
+
+button, 
+input {
+    border:none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button { 
+    background: none;
+    cursor: pointer;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+.folding-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-top: 20px;
+}
+
+.folding-header nav {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+.folding-header .logo {
+    display: block;
+    max-width: 120px;
+    margin: 0 15px;
+}
+
+.folding-header .toggle-mob-menu {
+    display: none;
+    margin-left: 5px;
+    padding: 4px;
+    background: var(--page-content-blockColor);
+    border-radius: var(--border-radius);
+}
+
+.folding-header .toggle-mob-menu svg {
+    fill: var(--black);
+    transition: transform 0.2s;
+}
+
+.folding-header .employee-menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 35px;
+}
+
+.page-header .employee-menu li:last-child {
+    margin-top: auto;
+    margin-bottom: 20px;
+  }
+
+.folding-header .employee-menu .menu-heading h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    margin-top: 12px;
+    color: var(--page-header-headingColor);
+}
+
+.folding-header .employee-menu a,
+.folding-header .employee-menu button {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
