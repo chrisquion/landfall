@@ -6,14 +6,14 @@ const toggleMobMenu = document.querySelector(".toggle-mob-menu");
 
 
 collapseButton.addEventListener("click", function() {
-    this.getAttribute("aria-expanded") == true
-        ? this.setAttribute("aria-expanded", "false")
-        : this.setAttribute("aria-expanded", "true");
+    this.getAttribute("aria-expanded") == "true"
+      ? this.setAttribute("aria-expanded", "false")
+      : this.setAttribute("aria-expanded", "true");
     this.getAttribute("aria-label") == "collapse menu"
-        ? this.setAttribute("aria-label", "expand menu")
-        : this.setAttribute("aria-label", "collapse menu");
+      ? this.setAttribute("aria-label", "expand menu")
+      : this.setAttribute("aria-label", "collapse menu");
     body.classList.toggle(isCollapsed);
-});
+  });
 
 toggleMobMenu.addEventListener("click", function() {
     this.getAttribute("aria-expanded") == true 
@@ -27,7 +27,7 @@ toggleMobMenu.addEventListener("click", function() {
 
 for (const link of menuLinks) {
     link.addEventListener("mouseenter", function() {
-      body.classList.contains(collapsedClass) &&
+      body.classList.contains(isCollapsed) &&
       window.matchMedia("(min-width: 768px)").matches
         ? this.setAttribute("title", this.textContent)
         : this.removeAttribute("title");
