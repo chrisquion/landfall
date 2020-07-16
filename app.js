@@ -17,14 +17,14 @@ $( document ).ready(function() {
   });
 
   toggleMobMenu.addEventListener("click", function() {
-      this.getAttribute("aria-expanded") == true 
+      this.getAttribute("aria-expanded") == "true" 
           ? this.setAttribute("aria-expanded", "false")
           : this.setAttribute("aria-expanded", "true");
       this.getAttribute("aria-label") == "open menu"
           ? this.setAttribute("aria-label", "close menu")
-          : this.setAttribute("aria-label", "open menu")
+          : this.setAttribute("aria-label", "open menu");
+      body.classList.toggle("mob-menu-opened");
   });
-
 
   for (const link of menuLinks) {
       link.addEventListener("mouseenter", function() {
