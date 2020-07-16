@@ -221,7 +221,12 @@ input {
       padding: 10px;
     }
    
-    .collapsed .folding-header .logo,
+    .collapsed .logo {
+        transform: scale(.75, .75);
+        margin: 5px;
+        height:35px;
+    }
+
     .collapsed .folding-header .employee-menu span,
     .collapsed .folding-header .employee-menu .menu-heading {
       display: none;
