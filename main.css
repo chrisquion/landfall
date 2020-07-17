@@ -167,8 +167,25 @@ input {
     padding: 30px;
     color: var(--folding-content-txtColor);
     background: var(--folding-content-bgColor);
+  }
+
+.page-content .content-grid {
+    position: relative;
+    display: grid;
+    grid-gap: 10px;
 }
 
+.page-content .content-grid > article {
+    display: flex;
+    background: var(--folding-content-blockColor);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.page-content .content-grid > article:first-child,
+.page-content .content-grid > article:last-child {
+    grid-column: 1 / -1;
+}
 
 /*==== search bar ====*/
 .search {
