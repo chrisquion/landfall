@@ -109,7 +109,7 @@ input {
 
 .folding-header .employee-menu li:last-child {
     margin-top: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
 .folding-header .employee-menu .menu-heading h3 {
@@ -325,9 +325,9 @@ input {
     transition: all 0.2s;
 }
 
-.mob-menu-opened .toggle-mob-menu svg,
 .mob-menu-opened .toggle-mob-menu img {
     transform: rotate(180deg);
+    background-color: var(--folding-header-bgColor-hover);
 }
 
 .mob-menu-opened .folding-header .employee-menu {
