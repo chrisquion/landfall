@@ -119,9 +119,10 @@ input {
     color: var(--folding-header-headingColor);
 }
 
-.folding-header .employee-menu svg {
-    width: 20px;
-    height: 20px;
+.folding-header .employee-menu svg,
+.folding-header .employee-menu img {
+    width: 30px;
+    height: 30px;
     fill: var(--folding-header-txtColor);
     margin-right: 10px;
     transition: fill 0.2s;
@@ -188,7 +189,7 @@ input {
     font-size: 1.5rem;
     padding-left: 15px;
     background: var(--folding-content-blockColor);
-    color: var(--white);
+    color: var(--black);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
