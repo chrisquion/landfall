@@ -122,8 +122,8 @@ input {
 
 .folding-header .employee-menu svg,
 .folding-header .employee-menu img {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     fill: var(--folding-header-txtColor);
     margin-right: 10px;
     transition: fill 0.2s;
@@ -216,7 +216,7 @@ input {
 
 @media screen and (min-width: 768px) {
     .collapsed .folding-header {
-      width: 40px;
+      width: 150px;
     }
    
     .collapsed .folding-header .employee-menu li > * {
@@ -224,7 +224,7 @@ input {
     }
    
     .collapsed .logo {
-        transform: scale(.75, .75);
+        transform: scale(.6, .6);
         margin: 5px;
         height:35px;
     }
@@ -234,8 +234,11 @@ input {
       display: none;
     }
    
-    .collapsed .folding-header .employee-menu svg {
-      margin-right: 0;
+    .collapsed .folding-header .employee-menu svg,
+    .collapsed .folding-header .employee-menu img {
+      margin-right: 0px;
+      height: 20px;
+      width: 20px;
     }
    
     .collapsed .folding-header .collapse-btn svg {
