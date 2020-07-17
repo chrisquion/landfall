@@ -90,11 +90,12 @@ input {
     display: none;
     margin-left: 5px;
     padding: 4px;
-    background: var(--folding-content-blockColor);
+    background: var(--folding-header-bgColor);
     border-radius: var(--border-radius);
 }
 
-.folding-header .toggle-mob-menu svg {
+.folding-header .toggle-mob-menu svg,
+.folding-header .toggle-mob-menu button img {
     fill: var(--folding-header-bgColor);
     transition: transform 0.2s;
 }
@@ -121,8 +122,8 @@ input {
 
 .folding-header .employee-menu svg,
 .folding-header .employee-menu img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     fill: var(--folding-header-txtColor);
     margin-right: 10px;
     transition: fill 0.2s;
@@ -321,15 +322,16 @@ input {
 }
 
 .folding-header .employee-menu {
-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
-.mob-menu-opened .toggle-mob-menu svg {
-transform: rotate(180deg);
+.mob-menu-opened .toggle-mob-menu svg,
+.mob-menu-opened .toggle-mob-menu img {
+    transform: rotate(180deg);
 }
 
 .mob-menu-opened .folding-header .employee-menu {
-transform: scale(1);
-visibility: visible;
-opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
 }
