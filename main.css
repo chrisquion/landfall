@@ -192,19 +192,18 @@ input {
 .page-content .content-grid article {
     position: relative;
     display: inline-block;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     width: 100%;
     border-radius: 10px;
 }
 
-.page-content .content-grid article .article-photo-header {
+.page-content .content-grid article .article-photo-header img {
     -webkit-filter: none;
     display: block;
     min-width: 100%;
     min-height: 100%;
     height: auto;
+    position: absolute;
 }
 
 .page-content .content-grid article .text-overlay {
