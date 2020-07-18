@@ -197,7 +197,7 @@ input {
     border-radius: 10px;
 }
 
-.page-content .content-grid article .article-photo-header img {
+.page-content .content-grid article .article-photo-header img   {
     -webkit-filter: none;
     display: block;
     min-width: 100%;
