@@ -185,8 +185,7 @@ input {
 
 .page-content .content-grid article .article-photo-header:hover,
 .page-content .content-grid article .article-photo-header:focus {
-    -webkit-filter: blur(2px);
-    -webkit-filter: brightness(50%);
+    -webkit-filter: blur(2px) brightness(50%);
 }
 
 .page-content .content-grid article {
