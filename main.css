@@ -183,9 +183,9 @@ input {
     grid-column: 0 / -1;
 }
 
-.page-content .content-grid article .article-photo-header:hover,
-.page-content .content-grid article .article-photo-header:focus {
+.page-content .content-grid article:hover .article-photo-header {
     -webkit-filter: blur(2px) brightness(50%);
+    z-index: 0%;
 }
 
 .page-content .content-grid article {
@@ -205,9 +205,17 @@ input {
     position: absolute;
 }
 
-.page-content .content-grid article .text-overlay {
+.page-content .content-grid article .text-overlay h4 {
     position: absolute;
     top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.page-content .content-grid article .text-overlay h5 {
+    position: absolute;
+    top: 60%;
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
