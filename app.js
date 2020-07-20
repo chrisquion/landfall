@@ -4,6 +4,7 @@ $( document ).ready(function() {
   const isCollapsed = "collapsed";
   const menuLinks = document.querySelectorAll(".employee-menu a");
   const toggleMobMenu = document.querySelector(".toggle-mob-menu");
+  const articleBadge = document.querySelectorAll("article-badge");
 
 
   collapseButton.addEventListener("click", function() {
@@ -34,4 +35,12 @@ $( document ).ready(function() {
           : this.removeAttribute("title");
       });
   }
+
+  articleBadge.addEventListener("click", function() {
+    this.getAttribute("aria-label") == "badge button orange"
+        ? this.setAttribute("aria-label", "badge button yellow"), $('')
+        : this.setAttribute("aria-label", "badge button orange");
+  });
+
+
 });
