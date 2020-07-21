@@ -38,7 +38,7 @@ $( document ).ready(function() {
 
   articleBadge.addEventListener("click", function() {
     this.getAttribute("aria-label") == "badge button orange"
-        ? this.setAttribute("aria-label", "badge button yellow"), $('')
+        ? this.setAttribute("aria-label", "badge button yellow")
         : this.setAttribute("aria-label", "badge button orange");
   });
 
