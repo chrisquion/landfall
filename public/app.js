@@ -72,7 +72,7 @@ $( document ).ready(function() {
     var ac = articleContent.content;
     var markup = '\
     <a href="' + ac[i].link + '"> \n\
-    <img class="article-photo-header" src="' + ac[i].img_path + '" alt="Potluck lunch" width=700px> \n\
+    <img class="article-photo-header" src="' + ac[i].img_path + '" alt="Potluck lunch"> \n\
     </a> \n\
     <div class="text-overlay"> \n\
     <h4>' + ac[i].title + '</h4> \n\
