@@ -198,6 +198,7 @@ input {
     overflow: hidden;
     width: 100%;
     border-radius: 10px;
+    min-width: 700.5px;
 }
 
 .page-content .content-grid article .article-photo-header {
