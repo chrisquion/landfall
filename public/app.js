@@ -35,7 +35,6 @@ $( document ).ready(function() {
     });
   }
  
-
   for (const badge of articleBadges) {
     console.log("badge");
     badge.addEventListener("click", function() {
