@@ -35,12 +35,12 @@ $( document ).ready(function() {
           : this.removeAttribute("title");
       });
   }
-
-  articleBadge.addEventListener("click", function() {
-    this.getAttribute("aria-label") == "badge button orange"
-        ? this.setAttribute("aria-label", "badge button yellow")
-        : this.setAttribute("aria-label", "badge button orange");
-  });
-
-
+  
+  for (const badge of articleBadges) {
+      badge.addEventListner("click", function() {
+        this.getAttribute("aria-label") == "badge button orange"
+          ? this.setAttribute("aria-label", "badge button blue")
+          : this.setAttribute("aria-label", "badge button orange");
+      });
+  }
 });

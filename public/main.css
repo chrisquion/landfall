@@ -185,6 +185,7 @@ input {
 
 .page-content .content-grid article:hover .article-photo-header {
     -webkit-filter: blur(2px) brightness(50%);
+    filter: blur(2px) brightness(50%); 
 }
 
 .page-content .content-grid article:hover .text-overlay {
@@ -201,6 +202,7 @@ input {
 
 .page-content .content-grid article .article-photo-header {
     -webkit-filter: none;
+    filter: none;
     display: block;
     position: absolute;
     min-height: 500px;
@@ -235,7 +237,6 @@ input {
     font-size: 40px;
     color: white;
 }
-
 
 .page-content .content-grid article .article-badge-button svg {
     display: block;
@@ -297,7 +298,6 @@ input {
     right: 15px;
     transform: translateY(-50%);
 }
-
 
 @media screen and (min-width: 768px) {
     .collapsed .folding-header {
@@ -406,7 +406,6 @@ input {
         width: 18px;
         height: 18px;
     }
-
 }
 
 .folding-header .employee-menu {
