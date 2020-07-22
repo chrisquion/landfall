@@ -177,7 +177,6 @@ input {
     grid-gap: 30px;
 }
 
-
 .page-content .content-grid > article:first-child,
 .page-content .content-grid > article:last-child {
     grid-column: 0 / -1;
@@ -239,6 +238,16 @@ input {
     color: white;
 }
 
+
+.page-content .content-grid article .article-badge-button {
+    width: 50px;
+    height: 50px;
+    top: 82%;
+    left: 94%;
+    position: absolute;
+}
+
+
 .page-content .content-grid article .article-badge-button svg {
     display: block;
     max-width: 50px;
@@ -246,7 +255,6 @@ input {
     max-height: 50;
     top: 82%;
     left: 94%;
-    position: absolute;
     fill: #ff781f;
 }
 
