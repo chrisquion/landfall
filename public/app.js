@@ -11,7 +11,7 @@ $( document ).ready(function() {
     {title:"Working From Home", subtitle:"Comfort is Key", img_path:"assets/man_on_laptop.jpg", link:"#0"},
     {title:"Teamwork", subtitle:"There's no I here", img_path:"assets/hands-over-wooden-table.jpg", link:"#0"},
     {title:"The Numbers", subtitle:"What could they mean?", img_path:"assets/stock-exchange-board.jpg", link:"#0"},
-    {title:"Data Protection", subtitle:"Dont Get Phished", img_path:"assets/caution-cone-on-enter-key.jpg", link:"#0"},
+    {title:"2 New HR Positions", subtitle:"Applications due September 1", img_path:"assets/caution-cone-on-enter-key.jpg", link:"#0"},
     {title:"Reminder: Upcoming potluck lunch!", subtitle:"Please let HR know what you will be bringing", img_path:"assets/potluck-lunch.jpg", link:"#0"},
     {title:"Data Visualization with Paper", subtitle:"Making 2D Cool Again", img_path:"assets/working_with_data_sheets.jpg", link:"#0"}
   ];
@@ -31,21 +31,21 @@ $( document ).ready(function() {
 
   collapseButton.addEventListener("click", function() {
     this.getAttribute("aria-expanded") == "true"
-      ? (this.setAttribute("aria-expanded", "false"), console.log("menu collapsed"))
+      ? this.setAttribute("aria-expanded", "false")
       : this.setAttribute("aria-expanded", "true");
     this.getAttribute("aria-label") == "collapse menu"
       ? this.setAttribute("aria-label", "expand menu")
-      : (this.setAttribute("aria-label", "collapse menu"), console.log("menu opened"));
+      : this.setAttribute("aria-label", "collapse menu");
     body.classList.toggle(isCollapsed);
   });
 
   toggleMobMenu.addEventListener("click", function() {
     this.getAttribute("aria-expanded") == "true" 
-        ? (this.setAttribute("aria-expanded", "false"), console.log("mob-menu collapsed"))
+        ? this.setAttribute("aria-expanded", "false")
         : this.setAttribute("aria-expanded", "true");
     this.getAttribute("aria-label") == "open menu"
         ? this.setAttribute("aria-label", "close menu")
-        : (this.setAttribute("aria-label", "open menu"), console.log("mob-menu opened"));
+        : this.setAttribute("aria-label", "open menu");
     body.classList.toggle("mob-menu-opened");
   });
 
@@ -59,7 +59,6 @@ $( document ).ready(function() {
   }
  
   for (const badge of articleBadges) {
-    console.log("badge");
     badge.addEventListener("click", function() {
       this.getAttribute("aria-label") == "badge button orange"
         ? (this.setAttribute("aria-label", "badge button blue"), $(this).find('svg').css("fill", "blue"))
@@ -75,15 +74,12 @@ $( document ).ready(function() {
     <a href="' + ac[i].link + '"> \n\
     <img class="article-photo-header" src="' + ac[i].img_path + '" alt="Potluck lunch" width=700px> \n\
     </a> \n\
-  <div class="text-overlay"> \n\
+    <div class="text-overlay"> \n\
     <h4>' + ac[i].title + '</h4> \n\
     <h5>' + ac[i].subtitle + '</h5> \n\
-  </div>';
-    article.innerHTML = markup + article.innerHTML; /* We need to prepend not append */
-
-    console.log(i);
-    console.log(markup);
-    console.log(article.innerHTML);
+    </div>';
+    /* We need to prepend not append so that the buttons are visible */
+    article.innerHTML = markup + article.innerHTML; 
     i++;
   }
 });

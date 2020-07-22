@@ -68,7 +68,6 @@ input {
     right: 0;
     bottom: 0;
     overflow: auto;
-    padding-top: 20px;
     width: var(--folding-header-width);
     color: var(--folding-header-txtColor);
     background: var(--folding-header-bgColor);
@@ -342,16 +341,12 @@ input {
     }
 }
 
-/* Mobile menu */
+/* Small view */
 @media screen and (max-width: 767px) {
     .folding-header,
     .page-content {
       position: static;
-      width: 100%;
-    }
-
-    .folding-header {
-        padding: 10px;
+      width: 767px;
     }
 
     .folding-header svg {
@@ -362,6 +357,8 @@ input {
    
     .folding-header nav {
       flex-direction: row;
+      min-width: 100%;
+      width: 100vw;
     }
    
     .folding-header .toggle-mob-menu {
@@ -375,8 +372,8 @@ input {
    
     .folding-header .employee-menu {
       position: absolute;
-      left: 20px;
-      top: 57px;
+      left: 30px;
+      top: 40px;
       margin-top: 0;
       z-index: 2;
       border-radius: var(--border-radius);
@@ -387,6 +384,7 @@ input {
       transition: all 0.2s;
     }
      
+    /* hide the collapse button and the search*/
     .folding-header .employee-menu li:last-child,
     .search {
       display: none;
@@ -398,7 +396,7 @@ input {
       top: 10px;
       padding: 0;
       grid-column-gap: 5px;
-      width: calc(100% - 141px);
+      width: 100%;
       border-radius: var(--border-radius);
       background: transparent;
     }
@@ -411,6 +409,34 @@ input {
     .search form svg {
         width: 18px;
         height: 18px;
+    }
+
+    .page-content {
+        position: relative;
+        left: 0;
+        max-width: 100vw;
+        width: 100%;
+        min-height: 100vh;
+        color: var(--folding-content-txtColor);
+        background: var(--folding-content-bgColor);
+      }
+    
+    .page-content .content-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 500px;
+        grid-gap: 30px;
+    }
+    
+    .page-content .content-grid article {
+        max-width: 737px;
+        width: 100%;
+    }
+    .page-content .content-grid .article-photo-header {
+        max-width: 737px;
+        height: auto;
+        width: 100%;
     }
 }
 
