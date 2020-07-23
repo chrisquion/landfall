@@ -446,6 +446,32 @@ input {
         min-width: 100%;
         height: auto;
     }
+    
+    .page-content .content-grid article .article-badge-button {
+        width: 28px;
+        height: 28px;
+        top: 83%;
+        left: 90%;
+        position: absolute;
+    }
+
+    .page-content .content-grid article .text-overlay h4 {
+        position: absolute;
+        font-size: 15px;
+        top: 50%;
+        left: 51%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .page-content .content-grid article .text-overlay h5 {
+        position: absolute;
+        font-size: 10px;
+        top: 60%;
+        left: 51%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .folding-header .employee-menu {

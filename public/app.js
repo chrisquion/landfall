@@ -57,29 +57,32 @@ $( document ).ready(function() {
         : this.removeAttribute("title");
     });
   }
- 
-  for (const badge of articleBadges) {
-    badge.addEventListener("click", function() {
-      this.getAttribute("aria-label") == "badge button orange"
-        ? (this.setAttribute("aria-label", "badge button blue"), $(this).find('svg').css("fill", "blue"))
-        : (this.setAttribute("aria-label", "badge button orange"), $(this).find('svg').css("fill", "orange"));
-    });
-  }
-
+   
   /* populate the content-grid with the spoofed json objects */
+  /* this needs to occur before events are attached to the buttons nested in articles */
   var i = 0;
   for (const article of gridArticles) {
     var ac = articleContent.content;
     var markup = '\
     <a href="' + ac[i].link + '"> \n\
     <img class="article-photo-header" src="' + ac[i].img_path + '" alt="Potluck lunch"> \n\
-    </a> \n\
     <div class="text-overlay"> \n\
     <h4>' + ac[i].title + '</h4> \n\
     <h5>' + ac[i].subtitle + '</h5> \n\
-    </div>';
-    /* We need to prepend not append so that the buttons are visible */
+    </div> \n\
+    </a>';
+    
     article.innerHTML = markup + article.innerHTML; 
     i++;
   }
+  
+  for (const badge of articleBadges) {
+    badge.addEventListener("click", function() {
+      this.getAttribute("aria-label") == "badge button orange"
+        ? (this.setAttribute("aria-label", "badge button blue"), $(this).find('svg').css("fill", "blue"), console.log('click'))
+        : (this.setAttribute("aria-label", "badge button orange"), $(this).find('svg').css("fill", "orange"));
+    });
+  }
+
+
 });
