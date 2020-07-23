@@ -79,7 +79,7 @@ $( document ).ready(function() {
   for (const badge of articleBadges) {
     badge.addEventListener("click", function() {
       this.getAttribute("aria-label") == "badge button orange"
-        ? (this.setAttribute("aria-label", "badge button blue"), $(this).find('svg').css("fill", "blue"), console.log('click'))
+        ? (this.setAttribute("aria-label", "badge button blue"), $(this).find('svg').css("fill", "blue"))
         : (this.setAttribute("aria-label", "badge button orange"), $(this).find('svg').css("fill", "orange"));
     });
   }
