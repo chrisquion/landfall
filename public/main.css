@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
 
-
 :root {
     --folding-header-bgColor: #242e42;
     --folding-header-bgColor-hover: #1d2636;
@@ -274,6 +273,7 @@ input {
 
 .search form {
     position: relative;
+    width: 100%;
 }
 
 .search input[type="search"] {
