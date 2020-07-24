@@ -6,6 +6,7 @@ $( document ).ready(function() {
   const toggleMobMenu = document.querySelector(".toggle-mob-menu");
   const articleBadges = document.getElementsByClassName("article-badge-button");
   const gridArticles = document.querySelectorAll(".content-grid article");
+  const images = document.getElementsByTagName("img");
   
   var contentList = [ /* pretend these are retrieved from somewhere else for now */
     {title:"Working From Home", subtitle:"Comfort is Key", img_path:"assets/man_on_laptop.jpg", link:"#0"},
@@ -51,12 +52,16 @@ $( document ).ready(function() {
 
   for (const link of menuLinks) {
     link.addEventListener("mouseenter", function() {
-      body.classList.contains(isCollapsed) &&
-      window.matchMedia("(min-width: 768px)").matches
-        ? this.setAttribute("title", this.textContent)
-        : this.removeAttribute("title");
+      this.setAttribute("title", this.textContent)
     });
   }
+
+  for (const image of images) {
+    image.addEventListener("mouseenter", function() {
+      this.setAttribute("title", this.textContent)
+    });
+  }
+
    
   /* populate the content-grid with the spoofed json objects */
   /* this needs to occur before events are attached to the buttons nested in articles */
@@ -65,7 +70,7 @@ $( document ).ready(function() {
     var ac = articleContent.content;
     var markup = '\
     <a href="' + ac[i].link + '"> \n\
-    <img class="article-photo-header" loading="lazy" src="' + ac[i].img_path + '" alt="Potluck lunch"> \n\
+    <img class="article-photo-header" loading="lazy" src="' + ac[i].img_path + '" title="' + ac[i].title +'"> \n\
     <div class="text-overlay"> \n\
     <h4>' + ac[i].title + '</h4> \n\
     <h5>' + ac[i].subtitle + '</h5> \n\

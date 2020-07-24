@@ -25,6 +25,7 @@
 
 body {
     font: 16px/1.5 "Lato", sans-serif;
+    position: relative;
 }
 
 ul {
@@ -61,12 +62,10 @@ input {
 
 /*==== folding header ====*/
 .folding-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
+    height: 100%;
     width: var(--folding-header-width);
     color: var(--folding-header-txtColor);
     background: var(--folding-header-bgColor);
@@ -76,6 +75,7 @@ input {
     display: flex;
     flex-direction: column;
     min-width: 100%;
+    min-height: 100%;
 }
 
 .folding-header .logo {
@@ -237,7 +237,6 @@ input {
     color: white;
 }
 
-
 .page-content .content-grid article .article-badge-button {
     width: 28px;
     height: 28px;
@@ -307,7 +306,7 @@ input {
 
 @media screen and (min-width: 768px) {
     .collapsed .folding-header {
-      width: 150px;
+      width: 40px;
     }
    
     .collapsed .folding-header .employee-menu li > * {
@@ -317,7 +316,7 @@ input {
     .collapsed .logo {
         transform: scale(.6, .6);
         margin: 5px;
-        height:35px;
+        height: 35px;
     }
 
     .collapsed .folding-header .employee-menu span,
@@ -339,6 +338,19 @@ input {
     .collapsed .page-content {
       left: 40px;
       width: calc(100% - 40px);
+    }
+}
+
+/* Change to one column grid to prevent horizontal scrolling*/
+@media screen and (max-width: 1639px) {
+    .page-content .content-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 200px;
+        grid-gap: 5px;
+        max-width: 100%;
+        width: 100%;
     }
 }
 
