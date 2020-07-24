@@ -96,5 +96,25 @@ $( document ).ready(function() {
     });
   }
 
+  var content_grid = $(".content-grid");
+  var articles_sortedby_color;
 
+  $('article').each(function() {
+      var label = $(this).find(".article-badge-button").attr("aria-label");
+  });
+
+  sortBtn = $(".sort-btn").on("click", function() {
+    articles_sortedby_color = $('article').sort(function (a, b) {
+      content_a = $(a).find(".article-badge-button").attr('aria-label');
+      content_b = $(b).find(".article-badge-button").attr('aria-label');
+      return content_a.localeCompare(content_b);
+  });
+
+  $('article').each(function() {
+    var label = $(this).find(".article-badge-button").attr("aria-label");
+  });
+
+  content_grid.html(articles_sortedby_color);
+
+  });
 });

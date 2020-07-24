@@ -167,6 +167,25 @@ input {
     background: var(--folding-content-bgColor);
   }
 
+.page-content .sort {
+    position: absolute;
+    display: block;
+    padding:2px;
+    width:50px;
+    margin-right: 0px;
+    right: 20px;
+    top: 40px;
+}
+
+.page-content .sort .sort-btn img {
+    width: 30px;
+    height: auto;
+}
+
+.page-content .sort .sort-btn {
+    text-align: center;
+    justify-content: center;
+}
 .page-content .content-grid {
     position: relative;
     display: grid;
