@@ -7,7 +7,9 @@ $( document ).ready(function() {
   const articleBadges = document.getElementsByClassName("article-badge-button");
   const gridArticles = document.querySelectorAll(".content-grid article");
   const images = document.getElementsByTagName("img");
-  
+  const logos = document.getElementsByClassName("logo");
+
+
   var contentList = [ /* pretend these are retrieved from somewhere else for now */
     {title:"Working From Home", subtitle:"Comfort is Key", img_path:"assets/man_on_laptop.jpg", link:"#0"},
     {title:"Teamwork", subtitle:"There's no I here", img_path:"assets/hands-over-wooden-table.jpg", link:"#0"},
@@ -62,7 +64,12 @@ $( document ).ready(function() {
     });
   }
 
-   
+  for (const logo of logos) {
+    logo.addEventListener("mouseenter", function() {
+      this.textContent = "Landfall Logo";
+    });
+  }
+
   /* populate the content-grid with the spoofed json objects */
   /* this needs to occur before events are attached to the buttons nested in articles */
   var i = 0;
