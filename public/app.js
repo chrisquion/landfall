@@ -15,7 +15,7 @@ $( document ).ready(function() {
     {title:"Teamwork", subtitle:"There's no I here", img_path:"assets/hands-over-wooden-table.jpg", link:"#0"},
     {title:"The Numbers", subtitle:"What could they mean?", img_path:"assets/stock-exchange-board.jpg", link:"#0"},
     {title:"2 New HR Positions", subtitle:"Applications due September 1", img_path:"assets/people_shaking_hands.jpg", link:"#0"},
-    {title:"Reminder: Upcoming potluck lunch!", subtitle:"Please let HR know what you will be bringing", img_path:"assets/potluck-lunch.jpg", link:"#0"},
+    {title:"Reminder: Upcoming potluck lunch!", subtitle:"Please let HR know what you will be bringing", img_path:"assets/lunch_together.jpg", link:"#0"},
     {title:"Data Visualization with Paper", subtitle:"Making 2D Cool Again", img_path:"assets/working_with_data_sheets.jpg", link:"#0"}
   ];
  
