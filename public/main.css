@@ -506,7 +506,7 @@ input {
     .page-content .content-grid article h4 {
         display: inline-block;
         position: absolute;
-        font-size: 30px;
+        font-size: 20px;
         color: white;
         bottom: 20%;
     }
@@ -514,7 +514,7 @@ input {
     .page-content .content-grid article h5 {
         display: inline-block;
         position: absolute;
-        font-size: 20px;
+        font-size: 10px;
         color: white;
         bottom: 10%;
     }
